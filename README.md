@@ -65,10 +65,6 @@ O Autorent oferece uma série de recursos interativos para seus usuários, inclu
 
 - **Comparação de Veículos**: Os usuários podem comparar diferentes modelos de carros com base em recursos, preços e muito mais.
 
-## Contribuição
-
-Agradecemos muito pelo seu interesse em contribuir para o projeto Autorent. Se você deseja colaborar, siga as diretrizes de contribuição no arquivo `CONTRIBUTING.md`.
-
 ## Problemas e Suporte
 
 Se você encontrar algum problema ou tiver alguma dúvida, sinta-se à vontade para abrir uma **issue** neste repositório. Estamos aqui para ajudar!
