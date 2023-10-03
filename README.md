@@ -1,74 +1,72 @@
 # README - Autorent - Frontend
 
-Bem-vindo ao projeto Autorent - Frontend! Este é o repositório do frontend de uma aplicação de locadora de carros desenvolvida em React com TypeScript. O Autorent oferece recursos de aluguel de carros, verificação de disponibilidade, reserva e comparação de veículos, tudo isso em um ambiente que lembra uma rede social.
+Welcome to the Autorent - Frontend project! This is the repository for the frontend of a car rental application developed in React with TypeScript. Autorent offers features for car rental, availability checking, reservation, and vehicle comparison, all in an environment reminiscent of a social network.
 
-## Visão Geral
+## Overview
 
-O Autorent foi criado para tornar o processo de alugar um carro mais simples e interativo. Ele oferece uma experiência amigável e intuitiva para os usuários. Abaixo, você encontrará informações sobre como configurar e executar o projeto, bem como detalhes sobre a estrutura de pastas e principais recursos.
+Autorent was created to simplify and make the car rental process more interactive. It provides a user-friendly and intuitive experience. Below, you'll find information on how to set up and run the project, as well as details about the folder structure and key features.
 
-## Configuração do Ambiente de Desenvolvimento
+## Development Environment Setup
 
-Para configurar o ambiente de desenvolvimento, siga as etapas abaixo:
+To set up the development environment, follow the steps below:
 
-1. Certifique-se de que você possui o Node.js instalado em sua máquina. Caso não tenha, você pode fazer o download em [https://nodejs.org/](https://nodejs.org/).
+1. Ensure that you have Node.js installed on your machine. If not, you can download it from [https://nodejs.org/](https://nodejs.org/).
 
-2. Certifique-se de que você possui também o Yarn instalado em sua máquina. Caso não tenha, você pode fazer o download em [https://classic.yarnpkg.com/en/](https://classic.yarnpkg.com/en/).
+2. Make sure you also have Yarn installed on your machine. If not, you can download it from [https://classic.yarnpkg.com/en/](https://classic.yarnpkg.com/en/).
 
-3. Clone este repositório para a sua máquina:
+3. Clone this repository to your machine:
 
    ```bash
    git clone https://github.com/gabrielcaamargo/autorent.git
    ```
 
-4. Navegue até a pasta do projeto:
+4. Navigate to the project folder:
 
    ```bash
    cd autorent
    ```
 
-5. Instale as dependências do projeto:
+5. Install project dependencies:
 
    ```bash
    yarn
    ```
 
-## Executando o Projeto
+## Running the Project
 
-Após configurar o ambiente de desenvolvimento, você pode iniciar o projeto Autorent com o seguinte comando:
+After setting up the development environment, you can start the Autorent project with the following command:
 
 ```bash
 yarn dev
 ```
 
-Isso iniciará o servidor de desenvolvimento e abrirá o Autorent em seu navegador padrão.
+This will start the development server and open Autorent in your default browser.
 
-## Estrutura de Pastas
+## Folder Structure
 
-A estrutura de pastas do projeto está organizada da seguinte maneira:
+The project's folder structure is organized as follows:
 
-- `src/`: Contém o código-fonte principal da aplicação.
-  - `components/`: Componentes reutilizáveis da aplicação.
-  - `pages/`: Páginas principais da aplicação.
-  - `assets/`: Contém arquivos como imagens, favicon, etc.
-- `public/`: Contém recursos públicos, como imagens e arquivos HTML.
-- `package.json`: Arquivo de configuração do projeto.
+- `src/`: Contains the main source code of the application.
+  - `components/`: Reusable components of the application.
+  - `pages/`: Main pages of the application.
+  - `assets/`: Contains files such as images, favicon, etc.
+- `public/`: Contains public resources like images and HTML files.
+- `package.json`: Project configuration file.
 
-## Principais Recursos
+## Key Features
 
-O Autorent oferece uma série de recursos interativos para seus usuários, incluindo:
+Autorent offers a range of interactive features for its users, including:
 
-- **Aluguel de Carros**: Os usuários podem navegar e alugar uma variedade de carros disponíveis na plataforma.
+- **Car Rental**: Users can browse and rent a variety of cars available on the platform.
 
-- **Verificação de Disponibilidade**: Os usuários podem verificar a disponibilidade de carros em datas específicas.
+- **Availability Checking**: Users can check the availability of cars on specific dates.
 
-- **Reserva de Carros**: Os usuários podem fazer reservas de carros para as datas desejadas.
+- **Car Reservations**: Users can make car reservations for desired dates.
 
-- **Comparação de Veículos**: Os usuários podem comparar diferentes modelos de carros com base em recursos, preços e muito mais.
+- **Vehicle Comparison**: Users can compare different car models based on features, prices, and more.
 
-## Problemas e Suporte
+## Issues and Support
 
-Se você encontrar algum problema ou tiver alguma dúvida, sinta-se à vontade para abrir uma **issue** neste repositório. Estamos aqui para ajudar!
+If you encounter any issues or have questions, feel free to open an issue in this repository. We're here to help!
 
-
-
-Esperamos que você aproveite trabalhar com o Autorent e que ele seja útil para suas necessidades de locação de carros. Se tiver alguma sugestão ou feedback, não hesite em compartilhá-lo conosco. Boa viagem! 🚗✨
+We hope you enjoy working with Autorent and that it proves useful for your car rental needs. If you have any suggestions or feedback, don't hesitate to share them with us. Safe travels! 🚗✨
