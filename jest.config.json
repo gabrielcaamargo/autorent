@@ -1,0 +1,8 @@
+{
+  "verbose": true,
+  "testEnvironment": "jsdom",
+  "transform": {
+    "^.+\\.tsx?$": "babel-jest",
+    "^.+\\.svg$": "<rootDir>/tests/transformers/svgtransform.cjs"
+  }
+}
