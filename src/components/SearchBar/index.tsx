@@ -3,6 +3,8 @@ import { DatePicker, Select } from 'antd';
 import { useGetState } from '../../hooks/useGetState';
 import { useGetCity } from '../../hooks/useGetCity';
 
+import { Loader } from '../../portals/Loader';
+
 export function SearchBar() {
   const [selectedState, setSelectedState] = useState('');
   const [selectedCity, setSelectedCity] = useState('');
@@ -15,9 +17,7 @@ export function SearchBar() {
 
   if (isStateLoading || isCityLoading || !Array.isArray(states) || !Array.isArray(cities)) {
     return (
-      <div className='absolute h-full w-full flex items-center justify-center'>
-        <h1>Loading...</h1>
-      </div>
+      <Loader />
     );
   }
 
