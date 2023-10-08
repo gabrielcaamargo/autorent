@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from 'axios';
 import { State } from '../types/State';
 import { StateSchema } from '../types/schemas/StateSchema';
