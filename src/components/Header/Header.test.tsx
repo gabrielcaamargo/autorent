@@ -1,16 +1,16 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import '@testing-library/jest-dom';
+import { render, fireEvent } from '@testing-library/react';
 import { Header } from '.';
 
 describe('Header component', function () {
   it('should render app logo', function () {
-    render(<Header />);
-
-    screen.getByTestId('logo');
+    const { getByAltText } = render(<Header />);
+    expect(getByAltText('Autorent')).toBeInTheDocument();
   });
 
   it('should redirect the user when clicking on logo', function () {
-    render(<Header />);
-    const logo = screen.getByTestId('logo');
+    const { getByAltText } = render(<Header />);
+    const logo = getByAltText('Autorent');
     const baseUrl = 'http://localhost/';
     fireEvent.click(logo);
 
@@ -18,8 +18,8 @@ describe('Header component', function () {
   });
 
   it('should render user actions buttons', function () {
-    render(<Header />);
-    screen.getByTestId('sign-up');
-    screen.getByTestId('login');
+    const { getByText } = render(<Header />);
+    expect(getByText('Inscreva-se')).toBeInTheDocument();
+    expect(getByText('Login')).toBeInTheDocument();
   });
 });
