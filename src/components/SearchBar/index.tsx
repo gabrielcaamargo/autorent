@@ -1,13 +1,19 @@
+import { useState } from 'react';
 import { DatePicker, Select } from 'antd';
 import { useGetState } from '../../hooks/useGetState';
+import { useGetCity } from '../../hooks/useGetCity';
 
 export function SearchBar() {
-  const [states, isLoading] = useGetState();
+  const [selectedState, setSelectedState] = useState('');
+  const [selectedCity, setSelectedCity] = useState('');
+
+  const [states, isStateLoading] = useGetState();
+  const [cities, isCityLoading] = useGetCity(selectedState);
 
   const { RangePicker } = DatePicker;
   const dateFormat = 'DD/MM/YYYY';
 
-  if (isLoading || !Array.isArray(states)) {
+  if (isStateLoading || isCityLoading || !Array.isArray(states) || !Array.isArray(cities)) {
     return (
       <div className='absolute h-full w-full flex items-center justify-center'>
         <h1>Loading...</h1>
@@ -23,14 +29,18 @@ export function SearchBar() {
           className='w-[256px]'
           size='large'
           placeholder='Estado de retirada'
-          options={states.map((location) => ({ label: location.nome, value: location.sigla }))}
+          options={states.map((state) => ({ label: state.nome, value: state.sigla }))}
+          value={selectedState === '' ? undefined : selectedState}
+          onChange={(state) => setSelectedState(state)}
         />
         <Select
           className='w-[256px]'
           size='large'
           placeholder='Cidade de retirada'
-          options={states.map((location) => ({ label: location.nome, value: location.sigla }))}
-          disabled
+          options={cities.map((city) => ({ label: city.nome, value: city.nome }))}
+          value={selectedCity === '' ? undefined : selectedCity}
+          disabled={!selectedState}
+          onChange={(city) => setSelectedCity(city)}
         />
       </div>
     </div>
