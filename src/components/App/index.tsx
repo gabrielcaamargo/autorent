@@ -1,4 +1,5 @@
-import { QueryClientProvider, QueryClient } from 'react-query';
+import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { BrowserRouter } from 'react-router-dom';
 import { ConfigProvider } from 'antd';
 import { Router } from '../Router';
@@ -13,14 +14,15 @@ export function App() {
         locale={ptBr}
         theme={{
           token: {
-            colorPrimary: '#AA1515'
-          }
+            colorPrimary: '#AA1515',
+          },
         }}
       >
         <BrowserRouter>
           <Router />
         </BrowserRouter>
       </ConfigProvider>
+      <ReactQueryDevtools initialIsOpen />
     </QueryClientProvider>
   );
 }
