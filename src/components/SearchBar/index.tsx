@@ -1,13 +1,13 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import { DatePicker, Select } from 'antd';
+import { LocationContext } from '../../contexts/LocationContext';
 import { useGetState } from '../../hooks/useGetState';
 import { useGetCity } from '../../hooks/useGetCity';
 
 import { Loader } from '../../portals/Loader';
 
 export function SearchBar() {
-  const [selectedState, setSelectedState] = useState('');
-  const [selectedCity, setSelectedCity] = useState('');
+  const { selectedState, setSelectedState, selectedCity, setSelectedCity } = useContext(LocationContext);
 
   const [states, isStateLoading] = useGetState();
   const [cities, isCityLoading] = useGetCity(selectedState);
