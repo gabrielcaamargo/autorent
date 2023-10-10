@@ -4,6 +4,8 @@ import { LocationContext } from '../../contexts/LocationContext';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { FilterOption } from '.';
 
+import { BiFilterAlt } from 'react-icons/bi';
+
 describe('Filter Option component', function () {
   const locationContextValue = {
     selectedState: 'RS',
@@ -12,12 +14,14 @@ describe('Filter Option component', function () {
     setSelectedCity: jest.fn(),
   };
 
+  const onClick = jest.fn();
+
   const renderFilterOptions = () => {
     const queryClient = new QueryClient();
     render(
       <QueryClientProvider client={queryClient}>
         <LocationContext.Provider value={locationContextValue}>
-          <FilterOption label='Supercarros' />
+          <FilterOption label='Supercarros' icon={<BiFilterAlt />} isActive={false} onClick={onClick} />
         </LocationContext.Provider>
       </QueryClientProvider>
     );
