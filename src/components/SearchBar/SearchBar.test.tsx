@@ -81,4 +81,14 @@ describe('SearchBar component', () => {
       expect(locationContextValue.setSelectedCity).toHaveBeenCalledWith('Novo Hamburgo');
     });
   });
+
+  it('should has mobile classes on container', function () {
+    renderSearchBar();
+
+    if (window.innerWidth <= 768) {
+      const container = screen.getByTestId('content').querySelector('max-md:gap-[22px]');
+
+      expect(container).toBeInTheDocument();
+    }
+  });
 });
