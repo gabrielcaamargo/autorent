@@ -1,7 +1,6 @@
 {
   "verbose": true,
   "testEnvironment": "jsdom",
-  "preset": "vite-jest",
   "transform": {
     "^.+\\.tsx?$": "babel-jest",
     "^.+\\.ts?$": "babel-jest",
@@ -17,10 +16,6 @@
     "tsx",
     "json",
     "node"
-  ],
-  "transformIgnorePatterns": [
-    "<rootDir>/node_modules/(?!@uiball/*)",
-    "<rootDir>/node_modules/(?!@jest-resolve/*)"
   ],
   "roots": [
     "<rootDir>"
