@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Modal } from 'antd';
 import { BiFilterAlt } from 'react-icons/bi';
 import { FilterOption } from '../FilterOption';
+import { FilterModal } from '../FilterModal';
 
 export function FilterBar() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -38,7 +38,9 @@ export function FilterBar() {
           onClick={() => setIsModalOpen(true)}
         />
 
-        <Modal open={isModalOpen} footer={null} onCancel={() => setIsModalOpen(false)} />
+        <FilterModal title='Filtro avançado' open={isModalOpen} onCancel={() => setIsModalOpen(false)}>
+          <h1>Teste</h1>
+        </FilterModal>
       </div>
     </div>
   );
