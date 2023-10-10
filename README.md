@@ -1,6 +1,10 @@
-# README - Autorent - Frontend
+# Autorent - Frontend
 
-Welcome to the Autorent - Frontend project! This is the repository for the frontend of a car rental application developed in React with TypeScript. Autorent offers features for car rental, availability checking, reservation, and vehicle comparison, all in an environment reminiscent of a social network.
+![image](https://github.com/gabrielcaamargo/autorent/assets/91189919/957f9d4e-c16b-4672-8e5f-5ee50f470389)
+
+##
+
+Welcome to the Autorent! This is the repository for the frontend of a car rental application developed in React with TypeScript. Autorent offers features for car rental, availability checking, reservation, and vehicle comparison, all in an environment reminiscent of a social network.
 
 ## Overview
 
@@ -50,6 +54,12 @@ The project's folder structure is organized as follows:
   - `components/`: Reusable components of the application.
   - `pages/`: Main pages of the application.
   - `assets/`: Contains files such as images, favicon, etc.
+  - `contexts/`: Global state managers using contexts
+  - `hooks/`: Custom hooks
+  - `portals/`: React portals
+  - `services/`: Functions to handle api calls
+  - `types/`: Types
+  - `tests/`: Tests settings
 - `public/`: Contains public resources like images and HTML files.
 - `package.json`: Project configuration file.
 
