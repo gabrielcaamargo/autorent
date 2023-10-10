@@ -22,7 +22,7 @@ export function SearchBar() {
   }
 
   return (
-    <div className='p-5 flex items-center gap-[38px] shadow-[0_6px_8px_0_rgba(0,0,0,0.1)]'>
+    <div className='p-5 flex items-center gap-[38px] shadow-[0_6px_8px_0_rgba(0,0,0,0.1)]' data-testid="content">
       <RangePicker size='large' className='w-[372px] shadow-[0_1px_4px_0_rgba(0,0,0,0.1)]' format={dateFormat} />
       <div className='flex items-center gap-[22px]'>
         <Select
