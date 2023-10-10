@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "ES2020",
     "useDefineForClassFields": true,
+    "outDir": "dist",
     "lib": [
       "ES2020",
       "DOM",
@@ -24,6 +25,9 @@
   },
   "include": [
     "src"
+  ],
+  "exclude": [
+    "node_modules"
   ],
   "references": [
     {
