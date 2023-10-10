@@ -1,10 +1,6 @@
-import { useContext, useEffect } from 'react';
-import { LocationContext } from '../../contexts/LocationContext';
 import logo from '../../assets/images/logo.svg';
 
 export function Header() {
-  const { selectedCity, selectedState } = useContext(LocationContext);
-  useEffect(() => console.log(`${selectedState} - ${selectedCity}`), [selectedCity, selectedState]);
   return (
     <header className='flex items-center justify-between p-5 border-b-[1px] border-gray-100'>
       <a href="/">

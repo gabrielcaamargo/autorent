@@ -1,8 +1,33 @@
 {
   "verbose": true,
   "testEnvironment": "jsdom",
+  "preset": "vite-jest",
   "transform": {
     "^.+\\.tsx?$": "babel-jest",
+    "^.+\\.ts?$": "babel-jest",
     "^.+\\.svg$": "<rootDir>/tests/transformers/svgtransform.cjs"
-  }
+  },
+  "moduleNameMapper": {
+    "@/(.*)": "<rootDir>/src/$1"
+  },
+  "moduleFileExtensions": [
+    "js",
+    "jsx",
+    "ts",
+    "tsx",
+    "json",
+    "node"
+  ],
+  "transformIgnorePatterns": [
+    "<rootDir>/node_modules/(?!@uiball/*)",
+    "<rootDir>/node_modules/(?!@jest-resolve/*)"
+  ],
+  "roots": [
+    "<rootDir>"
+  ],
+  "moduleDirectories": [
+    "node_modules",
+    "src"
+  ],
+  "rootDir": "."
 }
