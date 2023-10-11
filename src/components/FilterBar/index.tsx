@@ -13,9 +13,9 @@ export function FilterBar() {
     { name: 'Popular', isActive: false, id: 4 },
     { name: 'Sedans', isActive: false, id: 5 },
     { name: 'Minivans', isActive: false, id: 6 },
-    { name: 'Conversíveis', isActive: false, id: 1 },
-    { name: 'Elétricos', isActive: false, id: 1 },
-    { name: 'Premium', isActive: false, id: 1 },
+    { name: 'Conversíveis', isActive: false, id: 7 },
+    { name: 'Elétricos', isActive: false, id: 8 },
+    { name: 'Premium', isActive: false, id: 9 },
   ];
 
   return (
@@ -38,9 +38,11 @@ export function FilterBar() {
           onClick={() => setIsModalOpen(true)}
         />
 
-        <FilterModal title='Filtro avançado' open={isModalOpen} onCancel={() => setIsModalOpen(false)}>
-          <h1>Teste</h1>
-        </FilterModal>
+        <FilterModal
+          open={isModalOpen}
+          title='Filtro avançado'
+          onCancel={() => setIsModalOpen(false)}
+        />
       </div>
     </div>
   );

@@ -6,4 +6,8 @@
   html {
     font-family: 'Jaldi', sans-serif;
   }
+
+  input {
+    outline: none;
+  }
 }
