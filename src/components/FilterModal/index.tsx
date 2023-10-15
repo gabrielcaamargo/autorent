@@ -1,4 +1,4 @@
-import { useCallback, useRef, useContext, useEffect } from 'react';
+import { useCallback, useRef, useContext } from 'react';
 
 import { FilterContext } from '../../contexts/FilterProvider';
 
@@ -11,7 +11,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 
 export function FilterModal({ open, onClose, title }: IModal) {
-  const { setPriceRange, setBrand, brand, year, setYear } = useContext(FilterContext);
+  const { setPriceRange, setBrand, setYear } = useContext(FilterContext);
 
   const sliderRef = useRef(0);
 
@@ -47,12 +47,6 @@ export function FilterModal({ open, onClose, title }: IModal) {
     setYear(event.year);
     onClose();
   }, []);
-
-  useEffect(() => {
-    console.log(sliderRef);
-    console.log(brand);
-    console.log(year);
-  }, [brand, year]);
 
   return (
     <Modal

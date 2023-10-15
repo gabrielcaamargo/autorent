@@ -43,6 +43,7 @@
           "match": true
         }
       }
-    ]
+    ],
+    "no-console": "warn"
   }
 }
