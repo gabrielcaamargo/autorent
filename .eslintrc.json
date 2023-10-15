@@ -6,7 +6,8 @@
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    "prettier"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -15,17 +16,23 @@
   },
   "plugins": [
     "@typescript-eslint",
-    "react"
+    "react",
+    "prettier"
   ],
   "rules": {
+    "prettier/prettier": "error",
     "react/react-in-jsx-scope": "off",
+    "react/jsx-props-no-spreading": "off",
+    "no-console": "warn",
+    "no-empty": [
+      "error",
+      {
+        "allowEmptyCatch": true
+      }
+    ],
     "indent": [
       "error",
       2
-    ],
-    "linebreak-style": [
-      "error",
-      "windows"
     ],
     "quotes": [
       "error",
@@ -34,6 +41,19 @@
     "semi": [
       "error",
       "always"
+    ],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "interface",
+        "format": [
+          "PascalCase"
+        ],
+        "custom": {
+          "regex": "^I[A-Z]",
+          "match": true
+        }
+      }
     ]
   }
 }
