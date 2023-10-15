@@ -19,6 +19,7 @@
   ],
   "rules": {
     "react/react-in-jsx-scope": "off",
+    "react/jsx-props-no-spreading": "off",
     "indent": [
       "error",
       2
@@ -44,6 +45,12 @@
         }
       }
     ],
-    "no-console": "warn"
+    "no-console": "warn",
+    "no-empty": [
+      "error",
+      {
+        "allowEmptyCatch": true
+      }
+    ]
   }
 }
