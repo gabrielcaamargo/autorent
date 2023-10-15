@@ -1,4 +1,7 @@
-import { useCallback } from 'react';
+import { useCallback, useRef, useContext, useEffect } from 'react';
+
+import { FilterContext } from '../../contexts/FilterProvider';
+
 import { IModal } from '../../types/Modal';
 import { Modal } from '../Modal';
 
@@ -7,12 +10,21 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 
-export function FilterModal({ open, onCancel, title }: IModal) {
+export function FilterModal({ open, onClose, title }: IModal) {
+  const {setPriceRange, setBrand, brand, year, setYear} = useContext(FilterContext);
+
+  const sliderRef = useRef(0);
+
   const createSearchFilterSchema = z.object({
     brand: z.string()
       .nonempty('A marca é obrigatória')
       .min(3, 'Deve conter no mínimo 3 caracteres')
-      .max(20, 'Deve conter no máximo 25 caracteres'),
+      .max(20, 'Deve conter no máximo 25 caracteres')
+      .transform(brand => {
+        return brand.trim().split(' ').map(word => {
+          return word[0].toLocaleUpperCase().concat(word.substring(1));
+        }).join(' ');
+      }),
     year: z.string()
       .nonempty('O ano é obrigatório')
       .max(4, 'Deve conter no máximo 4 dígitos')
@@ -26,19 +38,31 @@ export function FilterModal({ open, onCancel, title }: IModal) {
     resolver: zodResolver(createSearchFilterSchema)
   });
 
+
+  const handleUpdatePriceRange = useCallback((price: number) => sliderRef.current = price ,[]);
+
   const createFilter = useCallback((event: CreateSearchFilterData) => {
-    console.log(event);
+    setPriceRange(sliderRef.current);
+    setBrand(event.brand);
+    setYear(event.year);
+    onClose();
   }, []);
+
+  useEffect(() => {
+    console.log(sliderRef);
+    console.log(brand);
+    console.log(year);
+  }, [brand, year]);
 
   return (
     <Modal
       title={title}
       open={open}
-      onCancel={onCancel}
+      onClose={onClose}
     >
       <div className='flex flex-col'>
         <span className='font-bold text-base mb-2'>Preço da diária</span>
-        <Slider max={2500} />
+        <Slider max={2500} onChange={handleUpdatePriceRange} />
         <div className='flex items-center justify-between'>
           <span className='font-bold text-sm text-gray-600'>R$0</span>
           <span className='font-bold text-sm text-gray-600'>R$2.500</span>

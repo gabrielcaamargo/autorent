@@ -1,11 +1,11 @@
 import { Modal as AntModal } from 'antd';
 import { IModal } from '../../types/Modal';
 
-export function Modal({ open, onCancel, title, children }: IModal) {
+export function Modal({ open, onClose, title, children }: IModal) {
   return (
     <AntModal
       open={open}
-      onCancel={onCancel}
+      onCancel={onClose}
       width={624}
       footer={null}
     >

@@ -1,6 +1,6 @@
 export interface IModal {
   open: boolean;
-  onCancel: () => void;
+  onClose: () => void;
   title: string;
   children?: React.ReactNode;
 }
