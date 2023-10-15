@@ -1,3 +1,10 @@
+import { FilterBar } from '../../components/FilterBar';
+import { FilterProvider } from '../../contexts/FilterProvider';
+
 export function Home() {
-  return null;
+  return (
+    <FilterProvider>
+      <FilterBar />
+    </FilterProvider>
+  );
 }

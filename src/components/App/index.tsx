@@ -9,7 +9,6 @@ import { Router } from '../Router';
 import ptBr from 'antd/locale/pt_BR';
 import { Header } from '../Header';
 import { SearchBar } from '../SearchBar';
-import { FilterBar } from '../FilterBar';
 
 export function App() {
   const [selectedState, setSelectedState] = useState('');
@@ -29,7 +28,6 @@ export function App() {
           <LocationContext.Provider value={{ selectedState, setSelectedState, selectedCity, setSelectedCity }}>
             <Header />
             <SearchBar />
-            <FilterBar />
             <Router />
           </LocationContext.Provider>
         </BrowserRouter>
