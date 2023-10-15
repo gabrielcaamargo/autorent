@@ -1,5 +1,5 @@
 import { Modal as AntModal } from 'antd';
-import { IModal } from '../../types/Modal';
+import { IModal } from '../../types/interfaces/IModal';
 
 export function Modal({ open, onClose, title, children }: IModal) {
   return (

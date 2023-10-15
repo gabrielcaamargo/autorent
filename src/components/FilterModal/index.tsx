@@ -2,7 +2,7 @@ import { useCallback, useRef, useContext, useEffect } from 'react';
 
 import { FilterContext } from '../../contexts/FilterProvider';
 
-import { IModal } from '../../types/Modal';
+import { IModal } from '../../types/interfaces/IModal';
 import { Modal } from '../Modal';
 
 import { Slider } from 'antd';
@@ -11,7 +11,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 
 export function FilterModal({ open, onClose, title }: IModal) {
-  const {setPriceRange, setBrand, brand, year, setYear} = useContext(FilterContext);
+  const { setPriceRange, setBrand, brand, year, setYear } = useContext(FilterContext);
 
   const sliderRef = useRef(0);
 
@@ -39,7 +39,7 @@ export function FilterModal({ open, onClose, title }: IModal) {
   });
 
 
-  const handleUpdatePriceRange = useCallback((price: number) => sliderRef.current = price ,[]);
+  const handleUpdatePriceRange = useCallback((price: number) => sliderRef.current = price, []);
 
   const createFilter = useCallback((event: CreateSearchFilterData) => {
     setPriceRange(sliderRef.current);
