@@ -38,7 +38,6 @@ export function FilterModal({ open, onClose, title }: IModal) {
     resolver: zodResolver(createSearchFilterSchema)
   });
 
-
   const handleUpdatePriceRange = useCallback((price: number) => sliderRef.current = price ,[]);
 
   const createFilter = useCallback((event: CreateSearchFilterData) => {
