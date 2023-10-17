@@ -6,9 +6,6 @@
     "^.+\\.ts?$": "babel-jest",
     "^.+\\.svg$": "<rootDir>/tests/transformers/svgtransform.cjs"
   },
-  "moduleNameMapper": {
-    "@/(.*)": "<rootDir>/src/$1"
-  },
   "moduleFileExtensions": [
     "js",
     "jsx",
@@ -24,5 +21,8 @@
     "node_modules",
     "src"
   ],
-  "rootDir": "."
+  "rootDir": ".",
+  "moduleNameMapper": {
+    ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "identity-obj-proxy"
+  }
 }
