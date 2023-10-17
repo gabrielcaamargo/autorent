@@ -6,7 +6,7 @@ import { FilterModal } from '../FilterModal';
 
 import { FilterContext } from '../../contexts/FilterProvider';
 
-import { IFilter } from '../../types/IFilter';
+import { IFilter } from '../../types/interfaces/IFilter';
 
 export function FilterBar() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -29,7 +29,7 @@ export function FilterBar() {
   const handleSelectFilterOption = useCallback((option: IFilter) => {
     const selectedFilter = filters.findIndex(filter => filter.id === option.id);
     const newFilters = [...filters];
-    newFilters[selectedFilter] = {...newFilters[selectedFilter], isActive: !newFilters[selectedFilter].isActive};
+    newFilters[selectedFilter] = { ...newFilters[selectedFilter], isActive: !newFilters[selectedFilter].isActive };
 
     setFilters(newFilters);
   }, [filters]);

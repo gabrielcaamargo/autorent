@@ -1,5 +1,5 @@
 import { createContext, useState } from 'react';
-import { IFilter } from '../types/IFilter';
+import { IFilter } from '../types/interfaces/IFilter';
 
 interface IFilterProvider {
   filters: IFilter[];
