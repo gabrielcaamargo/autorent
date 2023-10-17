@@ -14,7 +14,7 @@ export function Home() {
           <span className='text-carmesim-500'> Porto Alegre/RS</span>
         </h1>
 
-        <div className='mt-5 grid grid-cols-5 gap-y-6 gap-x-5'>
+        <div className='mt-5 grid grid-cols-5 gap-y-6 gap-x-5' data-testid="car-list">
           <Car />
           <Car />
           <Car />

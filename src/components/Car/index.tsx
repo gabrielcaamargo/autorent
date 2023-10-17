@@ -1,4 +1,4 @@
-import carBackground from '../../assets/images/car-background 1.jpg';
+import carBackground from '../../assets/images/car-background.svg';
 import velocimeter from '../../assets/images/icons/velocimeter.svg';
 import calendar from '../../assets/images/icons/calendar.svg';
 import blob from '../../assets/images/icons/blob.svg';
