@@ -9,6 +9,6 @@ export const StateSchema = z.array(
       id: z.number(),
       nome: z.string(),
       sigla: z.string(),
-    })
-  })
+    }),
+  }),
 );

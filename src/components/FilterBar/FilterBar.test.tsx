@@ -6,7 +6,7 @@ import { FilterBar } from '.';
 import { userEvent } from '@testing-library/user-event';
 import { FilterModal } from '../FilterModal';
 
-describe('Filter Bar component', function() {
+describe('Filter Bar component', function () {
   const handleCloseModalMock = jest.fn();
 
   const renderFilterBar = () => {
@@ -16,7 +16,7 @@ describe('Filter Bar component', function() {
         <FilterProvider>
           <FilterBar />
         </FilterProvider>
-      </QueryClientProvider>
+      </QueryClientProvider>,
     );
   };
 
@@ -25,16 +25,20 @@ describe('Filter Bar component', function() {
     render(
       <QueryClientProvider client={queryClient}>
         <FilterProvider>
-          <FilterModal onClose={handleCloseModalMock} open={true} title='Modal Test'/>
+          <FilterModal
+            onClose={handleCloseModalMock}
+            open={true}
+            title="Modal Test"
+          />
         </FilterProvider>
-      </QueryClientProvider>
+      </QueryClientProvider>,
     );
   };
-  it('should render filter bar', function() {
+  it('should render filter bar', function () {
     renderFilterBar();
   });
 
-  it('should open modal on advanced filters button gets clicked', function() {
+  it('should open modal on advanced filters button gets clicked', function () {
     renderFilterBar();
 
     const filter = screen.getByTestId('filter-modal');

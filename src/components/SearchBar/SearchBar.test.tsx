@@ -9,7 +9,7 @@ jest.mock('react-dom', () => {
   const original = jest.requireActual('react-dom');
   return {
     ...original,
-    createPortal: (node: HTMLElement) => node
+    createPortal: (node: HTMLElement) => node,
   };
 });
 
@@ -40,19 +40,19 @@ describe('SearchBar component', () => {
           <SearchBar />
         </LocationContext.Provider>
       </QueryClientProvider>,
-      { container }
+      { container },
     );
   };
 
   jest.mock('../../hooks/useGetState', () => {
     return {
-      useGetState: () => [['SP', 'RS'], false]
+      useGetState: () => [['SP', 'RS'], false],
     };
   });
 
   jest.mock('../../hooks/useGetCity', () => {
     return {
-      useGetCity: () => [['Porto Alegre', 'Novo Hamburgo'], false]
+      useGetCity: () => [['Porto Alegre', 'Novo Hamburgo'], false],
     };
   });
 
@@ -64,8 +64,12 @@ describe('SearchBar component', () => {
     waitFor(() => {
       expect(screen.getByTestId('loader')).toBeNull();
       expect(screen.getByTestId('content')).toBeInTheDocument();
-      expect(screen.getByPlaceholderText('Estado de retirada')).toBeInTheDocument();
-      expect(screen.getByPlaceholderText('Cidade de retirada')).toBeInTheDocument();
+      expect(
+        screen.getByPlaceholderText('Estado de retirada'),
+      ).toBeInTheDocument();
+      expect(
+        screen.getByPlaceholderText('Cidade de retirada'),
+      ).toBeInTheDocument();
     });
   });
 
@@ -74,11 +78,19 @@ describe('SearchBar component', () => {
 
     waitFor(() => {
       expect(screen.getByTestId('loader')).toBeNull();
-      userEvent.selectOptions(screen.getByPlaceholderText('Estado de retirada'), 'RS');
-      userEvent.selectOptions(screen.getByPlaceholderText('Cidade de retirada'), 'Novo Hamburgo');
+      userEvent.selectOptions(
+        screen.getByPlaceholderText('Estado de retirada'),
+        'RS',
+      );
+      userEvent.selectOptions(
+        screen.getByPlaceholderText('Cidade de retirada'),
+        'Novo Hamburgo',
+      );
 
       expect(locationContextValue.setSelectedState).toHaveBeenCalledWith('RS');
-      expect(locationContextValue.setSelectedCity).toHaveBeenCalledWith('Novo Hamburgo');
+      expect(locationContextValue.setSelectedCity).toHaveBeenCalledWith(
+        'Novo Hamburgo',
+      );
     });
   });
 
@@ -86,7 +98,9 @@ describe('SearchBar component', () => {
     renderSearchBar();
 
     if (window.innerWidth <= 768) {
-      const container = screen.getByTestId('content').querySelector('max-md:gap-[22px]');
+      const container = screen
+        .getByTestId('content')
+        .querySelector('max-md:gap-[22px]');
 
       expect(container).toBeInTheDocument();
     }

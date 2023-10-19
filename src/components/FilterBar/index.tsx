@@ -26,30 +26,36 @@ export function FilterBar() {
     ]);
   }, []);
 
-  const handleSelectFilterOption = useCallback((option: IFilter) => {
-    const selectedFilter = filters.findIndex(filter => filter.id === option.id);
-    const newFilters = [...filters];
-    newFilters[selectedFilter] = { ...newFilters[selectedFilter], isActive: !newFilters[selectedFilter].isActive };
+  const handleSelectFilterOption = useCallback(
+    (option: IFilter) => {
+      const selectedFilter = filters.findIndex(
+        (filter) => filter.id === option.id,
+      );
+      const newFilters = [...filters];
+      newFilters[selectedFilter] = {
+        ...newFilters[selectedFilter],
+        isActive: !newFilters[selectedFilter].isActive,
+      };
 
-    setFilters(newFilters);
-  }, [filters]);
+      setFilters(newFilters);
+    },
+    [filters],
+  );
 
   return (
-    <div className='mt-4'>
-      <div className='w-full max-w-[1284px] mx-auto gap-4 flex items-center justify-center'>
-        {
-          filters.map(option => (
-            <FilterOption
-              key={option.id}
-              label={option.name}
-              isActive={option.isActive}
-              onClick={() => handleSelectFilterOption(option)}
-            />
-          ))
-        }
+    <div className="mt-4">
+      <div className="w-full max-w-[1284px] mx-auto gap-4 flex items-center justify-center">
+        {filters.map((option) => (
+          <FilterOption
+            key={option.id}
+            label={option.name}
+            isActive={option.isActive}
+            onClick={() => handleSelectFilterOption(option)}
+          />
+        ))}
 
         <FilterOption
-          label='Todos os filtros'
+          label="Todos os filtros"
           icon={<BiFilterAlt color={isModalOpen ? '#FFF' : '#3C3C3C'} />}
           isActive={isModalOpen}
           onClick={() => setIsModalOpen(true)}
@@ -57,7 +63,7 @@ export function FilterBar() {
 
         <FilterModal
           open={isModalOpen}
-          title='Filtro avançado'
+          title="Filtro avançado"
           onClose={() => setIsModalOpen(false)}
         />
       </div>

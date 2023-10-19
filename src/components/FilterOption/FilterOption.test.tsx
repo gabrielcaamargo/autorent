@@ -21,9 +21,14 @@ describe('Filter Option component', function () {
     render(
       <QueryClientProvider client={queryClient}>
         <LocationContext.Provider value={locationContextValue}>
-          <FilterOption label='Supercarros' icon={<BiFilterAlt />} isActive={false} onClick={onClick} />
+          <FilterOption
+            label="Supercarros"
+            icon={<BiFilterAlt />}
+            isActive={false}
+            onClick={onClick}
+          />
         </LocationContext.Provider>
-      </QueryClientProvider>
+      </QueryClientProvider>,
     );
   };
   it('should render component', function () {

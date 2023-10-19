@@ -8,4 +8,6 @@ interface ILocationContext {
   setSelectedCity: (setState: string) => void;
 }
 
-export const LocationContext = createContext<ILocationContext | null>(null) as React.Context<ILocationContext>;
+export const LocationContext = createContext<ILocationContext | null>(
+  null,
+) as React.Context<ILocationContext>;

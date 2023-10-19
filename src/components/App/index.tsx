@@ -25,7 +25,14 @@ export function App() {
         }}
       >
         <BrowserRouter>
-          <LocationContext.Provider value={{ selectedState, setSelectedState, selectedCity, setSelectedCity }}>
+          <LocationContext.Provider
+            value={{
+              selectedState,
+              setSelectedState,
+              selectedCity,
+              setSelectedCity,
+            }}
+          >
             <Header />
             <SearchBar />
             <Router />

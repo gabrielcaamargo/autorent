@@ -26,16 +26,17 @@ export function FilterProvider({ children }: { children: React.ReactNode }) {
   const [year, setYear] = useState<number>(currentYear);
 
   return (
-    <FilterContext.Provider value={{
-      filters,
-      setFilters,
-      priceRange,
-      setPriceRange,
-      brand,
-      setBrand,
-      year,
-      setYear
-    }}
+    <FilterContext.Provider
+      value={{
+        filters,
+        setFilters,
+        priceRange,
+        setPriceRange,
+        brand,
+        setBrand,
+        year,
+        setYear,
+      }}
     >
       {children}
     </FilterContext.Provider>

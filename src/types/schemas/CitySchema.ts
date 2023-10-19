@@ -17,10 +17,10 @@ export const CitySchema = z.array(
           regiao: z.object({
             id: z.number(),
             nome: z.string(),
-            sigla: z.string()
+            sigla: z.string(),
           }),
-        })
-      })
-    })
-  })
+        }),
+      }),
+    }),
+  }),
 );
