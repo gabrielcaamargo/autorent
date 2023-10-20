@@ -3,7 +3,7 @@ import logo from '../../assets/images/logo.svg';
 
 export function Footer() {
   return (
-    <footer className="h-48 relative bottom-0 shadow-[0_-3px_4px_0_rgba(0,0,0,0.1)] px-9">
+    <footer className="h-48 absolute w-full bottom-0 shadow-[0_-3px_4px_0_rgba(0,0,0,0.1)] px-9">
       <div className="flex items-center justify-between py-12">
         <Link to="/">
           <img src={logo} alt="Autorent" />

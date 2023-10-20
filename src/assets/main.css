@@ -5,6 +5,11 @@
 @layer base {
   html {
     font-family: 'Open Sans', sans-serif;
+    height: 100vh;
+  }
+
+  body {
+
   }
 
   input {
