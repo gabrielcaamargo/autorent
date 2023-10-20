@@ -3,13 +3,15 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --swiper-pagination-bullet-width: 12px;
+    --swiper-pagination-bullet-height: 12px;
+    --swiper-pagination-color: #AA1515;
+  }
+
   html {
     font-family: 'Open Sans', sans-serif;
     height: 100vh;
-  }
-
-  body {
-
   }
 
   input {

@@ -37,7 +37,7 @@ export function App() {
             <Header />
             <SearchBar />
             <Router />
-            <Footer />
+            {/* <Footer /> */}
           </LocationContext.Provider>
         </BrowserRouter>
       </ConfigProvider>
