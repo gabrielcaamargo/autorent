@@ -9,7 +9,6 @@ import { Router } from '../Router';
 import ptBr from 'antd/locale/pt_BR';
 import { Header } from '../Header';
 import { SearchBar } from '../SearchBar';
-import { Footer } from '../Footer';
 
 export function App() {
   const [selectedState, setSelectedState] = useState('');
@@ -37,11 +36,10 @@ export function App() {
             <Header />
             <SearchBar />
             <Router />
-            {/* <Footer /> */}
           </LocationContext.Provider>
         </BrowserRouter>
       </ConfigProvider>
-      <ReactQueryDevtools initialIsOpen />
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 }
